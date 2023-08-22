@@ -7,5 +7,8 @@
 #Asciinema record for step 5, game Even example
 [![asciicast](https://asciinema.org/a/8d2m11WUlGseDBPU3WaMckkMZ.svg)](https://asciinema.org/a/8d2m11WUlGseDBPU3WaMckkMZ)
 
-#Asciinema recodr for step 6, game Calc example
+#Asciinema record for step 6, game Calc example
 [![asciicast](https://asciinema.org/a/QaYOKLaT0TOiGBrJBzyoL4ukW.svg)](https://asciinema.org/a/QaYOKLaT0TOiGBrJBzyoL4ukW)
+
+#Asciinema record for step 7, game GCD example
+[![asciicast](https://asciinema.org/a/SRPSJ8aEBnwHqhaEZn5IV4641.svg)](https://asciinema.org/a/SRPSJ8aEBnwHqhaEZn5IV4641)

@@ -40,8 +40,8 @@ public class Calc {
         String[][] array = new String[3][];
         int result = 0;
         for (int i = 0; i < 3; i++) {
-            setFirstnumber(Random.generateNumber()/4);
-            setSecondnumber(Random.generateNumber()/4);
+            setFirstnumber(Random.generateNumber() / 4);
+            setSecondnumber(Random.generateNumber() / 4);
             setSign(Random.generateSign());
             switch (getSign()) {
                 case '+':

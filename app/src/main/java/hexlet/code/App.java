@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
 
 import java.util.Scanner;
 
@@ -12,10 +13,15 @@ public class App {
                 + "1 - Greet\n"
                 + "2 - Even\n"
                 + "3 - Calc\n"
+                + "4 - GCD\n"
                 + "0 - Exit\n"
                 + "Your choice: ");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
+        if (choice == 0) {
+            System.out.println("Farewell and good luck!");
+            return;
+        }
         System.out.println("\nWelcome to the Brain Games!");
         String username = Cli.greeting(scanner);
         switch (choice) {
@@ -29,6 +35,9 @@ public class App {
                 System.out.println("What is the result of the expression?");
                 Calc.startGame(scanner, username);
                 break;
+            case 4:
+                System.out.println("Find the greatest common divisor of given numbers.");
+                Gcd.startGame(scanner, username);
             case 0:
                 System.out.println("Farewell and good luck!");
                 break;
