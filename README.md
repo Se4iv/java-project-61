@@ -4,5 +4,8 @@
 #CodeClimate Badges
 [![Maintainability](https://api.codeclimate.com/v1/badges/3b5263d268f3380e89a9/maintainability)](https://codeclimate.com/github/Se4iv/java-project-61/maintainability)
 
-#Aciinema recorde for lesson 5, game Even example
+#Asciinema record for step 5, game Even example
 [![asciicast](https://asciinema.org/a/8d2m11WUlGseDBPU3WaMckkMZ.svg)](https://asciinema.org/a/8d2m11WUlGseDBPU3WaMckkMZ)
+
+#Asciinema recodr for step 6, game Calc example
+[![asciicast](https://asciinema.org/a/QaYOKLaT0TOiGBrJBzyoL4ukW.svg)](https://asciinema.org/a/QaYOKLaT0TOiGBrJBzyoL4ukW)
