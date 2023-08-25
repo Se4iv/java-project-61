@@ -16,10 +16,17 @@ public class Even {
     public static void setRandomvalue(int randomvalue) {
         Even.randomvalue = randomvalue;
     }
+
+    private static int multiplier = 1000;
+
+    public static int getMultiplier() {
+        return multiplier;
+    }
+
     public static void startGame(Scanner scanner, String username) {
-        String[][] array = new String[3][];
-        for (int i = 0; i < 3; i++) {
-            setRandomvalue(Random.generateNumber());
+        String[][] array = new String[Engine.getGamescount()][];
+        for (int i = 0; i < Engine.getGamescount(); i++) {
+            setRandomvalue(Random.generateNumber(getMultiplier()));
             // Добавляем массив числа и правильного ответа
             array[i] = new String[]{String.valueOf(getRandomvalue()), getRandomvalue() % 2 == 0 ? "yes" : "no"};
         }

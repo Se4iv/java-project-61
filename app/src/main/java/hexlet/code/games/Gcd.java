@@ -25,14 +25,20 @@ public class Gcd {
     }
 
     private static int secondnumber;
+    private static int multiplier = 100;
+
+    public static int getMultiplier() {
+        return multiplier;
+    }
+
     public static void startGame(Scanner scanner, String username) {
-        String[][] array = new String[3][];
+        String[][] array = new String[Engine.getGamescount()][];
         int minumber = 0;
         int maxnumber = 0;
         int mod = 0;
-        for (int i = 0; i < 3; i++) {
-            setFirstnumber(Random.generateNumber());
-            setSecondnumber(Random.generateNumber());
+        for (int i = 0; i < Engine.getGamescount(); i++) {
+            setFirstnumber(Random.generateNumber(getMultiplier()));
+            setSecondnumber(Random.generateNumber(getMultiplier()));
             maxnumber = Math.max(getFirstnumber(), getSecondnumber());
             minumber = Math.min(getFirstnumber(), getSecondnumber());
             do {

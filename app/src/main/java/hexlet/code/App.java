@@ -3,17 +3,22 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
+//        for (int i = 0; i < 100; i++) {
+//            System.out.println(Random.generateNumber(7));
+//        }
         System.out.print("Please enter the game number and press Enter.\n"
                 + "1 - Greet\n"
                 + "2 - Even\n"
                 + "3 - Calc\n"
                 + "4 - GCD\n"
+                + "5 - Progression\n"
                 + "0 - Exit\n"
                 + "Your choice: ");
         Scanner scanner = new Scanner(System.in);
@@ -38,14 +43,15 @@ public class App {
             case 4:
                 System.out.println("Find the greatest common divisor of given numbers.");
                 Gcd.startGame(scanner, username);
-            case 0:
-                System.out.println("Farewell and good luck!");
+                break;
+            case 5:
+                System.out.println("What number is missing in the progression?");
+                Progression.startGame(scanner, username);
                 break;
             default:
                 System.out.println("Wrong input!");
                 break;
         }
-        System.out.println("Congratulations, " + username + "!");
         scanner.close();
     }
 }

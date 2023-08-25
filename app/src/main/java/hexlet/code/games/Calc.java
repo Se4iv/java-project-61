@@ -36,13 +36,19 @@ public class Calc {
 
     private static char sign;
 
+    private static int miltiplier = 25;
+
+    public static int getMiltiplier() {
+        return miltiplier;
+    }
+
     public static void startGame(Scanner scanner, String username) {
-        String[][] array = new String[3][];
+        String[][] array = new String[Engine.getGamescount()][];
         int result = 0;
-        for (int i = 0; i < 3; i++) {
-            setFirstnumber(Random.generateNumber() / 4);
-            setSecondnumber(Random.generateNumber() / 4);
-            setSign(Random.generateSign());
+        for (int i = 0; i < Engine.getGamescount(); i++) {
+            setFirstnumber(Random.generateNumber(getMiltiplier()));
+            setSecondnumber(Random.generateNumber(getMiltiplier()));
+            setSign(Random.generateSign(getMiltiplier()));
             switch (getSign()) {
                 case '+':
                     result = getFirstnumber() + getSecondnumber();
