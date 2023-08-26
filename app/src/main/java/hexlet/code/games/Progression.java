@@ -16,32 +16,32 @@ public class Progression {
         return startnumber;
     }
 
-    public static void setStartnumber(int startnumber) {
-        Progression.startnumber = startnumber;
+    public static void setStartnumber(int startnumber1) {
+        Progression.startnumber = startnumber1;
     }
 
     public static int getDifference() {
         return difference;
     }
 
-    public static void setDifference(int difference) {
-        Progression.difference = difference;
+    public static void setDifference(int difference1) {
+        Progression.difference = difference1;
     }
 
     public static int getMissingnumber() {
         return missingnumber;
     }
 
-    public static void setMissingnumber(int missingnumber) {
-        Progression.missingnumber = missingnumber;
+    public static void setMissingnumber(int missingnumber1) {
+        Progression.missingnumber = missingnumber1;
     }
 
     public static int getLength() {
         return length;
     }
 
-    public static void setLength(int length) {
-        Progression.length = length;
+    public static void setLength(int length1) {
+        Progression.length = length1;
     }
 
     private static final int STARTMULTIPLIER = 100;

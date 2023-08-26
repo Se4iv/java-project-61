@@ -10,8 +10,8 @@ public class Gcd {
         return firstnumber;
     }
 
-    public static void setFirstnumber(int firstnumber) {
-        Gcd.firstnumber = firstnumber;
+    public static void setFirstnumber(int firstnumber1) {
+        Gcd.firstnumber = firstnumber1;
     }
 
     private static int firstnumber;
@@ -20,8 +20,8 @@ public class Gcd {
         return secondnumber;
     }
 
-    public static void setSecondnumber(int secondnumber) {
-        Gcd.secondnumber = secondnumber;
+    public static void setSecondnumber(int secondnumber1) {
+        Gcd.secondnumber = secondnumber1;
     }
 
     private static int secondnumber;

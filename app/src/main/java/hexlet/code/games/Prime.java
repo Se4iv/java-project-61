@@ -25,8 +25,8 @@ public class Prime {
         return randomnumber;
     }
 
-    public static void setRandomnumber(int randomnumber) {
-        Prime.randomnumber = randomnumber;
+    public static void setRandomnumber(int randomnumber1) {
+        Prime.randomnumber = randomnumber1;
     }
 
     public static void startGame(Scanner scanner, String username) {

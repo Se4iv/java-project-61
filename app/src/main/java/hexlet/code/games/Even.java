@@ -13,8 +13,8 @@ public class Even {
         return randomvalue;
     }
 
-    public static void setRandomvalue(int randomvalue) {
-        Even.randomvalue = randomvalue;
+    public static void setRandomvalue(int randomvalue1) {
+        Even.randomvalue = randomvalue1;
     }
 
     private static final int MULTIPLIER = 1000;

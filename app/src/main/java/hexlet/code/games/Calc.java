@@ -10,8 +10,8 @@ public class Calc {
         return firstnumber;
     }
 
-    public static void setFirstnumber(int firstnumber) {
-        Calc.firstnumber = firstnumber;
+    public static void setFirstnumber(int firstnumber1) {
+        Calc.firstnumber = firstnumber1;
     }
 
     private static int firstnumber;
@@ -20,8 +20,8 @@ public class Calc {
         return secondnumber;
     }
 
-    public static void setSecondnumber(int secondnumber) {
-        Calc.secondnumber = secondnumber;
+    public static void setSecondnumber(int secondnumber1) {
+        Calc.secondnumber = secondnumber1;
     }
 
     private static int secondnumber;
@@ -30,16 +30,16 @@ public class Calc {
         return sign;
     }
 
-    public static void setSign(char sign) {
-        Calc.sign = sign;
+    public static void setSign(char sign1) {
+        Calc.sign = sign1;
     }
 
     private static char sign;
 
-    private static int miltiplier = 25;
+    private static final int MILTIPLIER = 25;
 
     public static int getMiltiplier() {
-        return miltiplier;
+        return MILTIPLIER;
     }
 
     public static void startGame(Scanner scanner, String username) {
