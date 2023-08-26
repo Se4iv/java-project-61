@@ -17,10 +17,10 @@ public class Even {
         Even.randomvalue = randomvalue;
     }
 
-    private static final int multiplier = 1000;
+    private static final int MULTIPLIER = 1000;
 
     public static int getMultiplier() {
-        return multiplier;
+        return MULTIPLIER;
     }
 
     public static void startGame(Scanner scanner, String username) {

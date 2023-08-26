@@ -25,10 +25,10 @@ public class Gcd {
     }
 
     private static int secondnumber;
-    private static final int multiplier = 100;
+    private static final int MULTIPLIER = 100;
 
     public static int getMultiplier() {
-        return multiplier;
+        return MULTIPLIER;
     }
 
     public static void startGame(Scanner scanner, String username) {

@@ -9,17 +9,17 @@ import hexlet.code.Random;
 import org.apache.commons.lang3.ArrayUtils;
 
 public class Prime {
-    private static final int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
+    private static final int[] PRIMES = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
         61, 67, 71, 73, 79, 83, 89, 97, 101};
 
-    private static Predicate<Integer> predicate = t -> ArrayUtils.contains(primes, t);
+    private static Predicate<Integer> predicate = t -> ArrayUtils.contains(PRIMES, t);
     private static int randomnumber;
 
     public static int getMultiplier() {
-        return multiplier;
+        return MULTIPLIER;
     }
 
-    private static final int multiplier = primes[primes.length - 1];
+    private static final int MULTIPLIER = PRIMES[PRIMES.length - 1];
 
     public static int getRandomnumber() {
         return randomnumber;

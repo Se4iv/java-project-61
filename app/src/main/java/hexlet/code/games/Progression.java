@@ -44,25 +44,25 @@ public class Progression {
         Progression.length = length;
     }
 
-    private static final int startmultiplier = 100;
-    private static final int differencemultiplier = 7;
-    private static final int lengthmultiplier = 5;
-    private static final int minlengthmultiplier = 5;
+    private static final int STARTMULTIPLIER = 100;
+    private static final int DIFFERENCEMULTIPLIER = 7;
+    private static final int LENGTHMULTIPLIER = 5;
+    private static final int MINLENGTHMULTIPLIER = 5;
 
     public static int getStartmultiplier() {
-        return startmultiplier;
+        return STARTMULTIPLIER;
     }
 
     public static int getDifferencemultiplier() {
-        return differencemultiplier;
+        return DIFFERENCEMULTIPLIER;
     }
 
     public static int getLengthmultiplier() {
-        return lengthmultiplier;
+        return LENGTHMULTIPLIER;
     }
 
     public static int getMinlengthmultiplier() {
-        return minlengthmultiplier;
+        return MINLENGTHMULTIPLIER;
     }
 
 
