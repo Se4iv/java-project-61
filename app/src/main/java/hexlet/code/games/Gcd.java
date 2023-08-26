@@ -25,7 +25,7 @@ public class Gcd {
     }
 
     private static int secondnumber;
-    private static int multiplier = 100;
+    private static final int multiplier = 100;
 
     public static int getMultiplier() {
         return multiplier;
@@ -33,9 +33,9 @@ public class Gcd {
 
     public static void startGame(Scanner scanner, String username) {
         String[][] array = new String[Engine.getGamescount()][];
-        int minumber = 0;
-        int maxnumber = 0;
-        int mod = 0;
+        int minumber;
+        int maxnumber;
+        int mod;
         for (int i = 0; i < Engine.getGamescount(); i++) {
             setFirstnumber(Random.generateNumber(getMultiplier()));
             setSecondnumber(Random.generateNumber(getMultiplier()));

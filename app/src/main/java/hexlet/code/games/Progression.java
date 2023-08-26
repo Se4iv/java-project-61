@@ -44,10 +44,10 @@ public class Progression {
         Progression.length = length;
     }
 
-    private static int startmultiplier = 100;
-    private  static int differencemultiplier = 7;
-    private static int lengthmultiplier = 5;
-    private static int minlengthmultiplier = 5;
+    private static final int startmultiplier = 100;
+    private static final int differencemultiplier = 7;
+    private static final int lengthmultiplier = 5;
+    private static final int minlengthmultiplier = 5;
 
     public static int getStartmultiplier() {
         return startmultiplier;

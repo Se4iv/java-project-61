@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Engine {
     public static int getGamescount() {
-        return gamescount;
+        return GAMESCOUNT;
     }
 
-    private static final int gamescount = 3;
+    private static final int GAMESCOUNT = 3;
     private static int counttrys = 0;
     private static boolean correctanswer = true;
 

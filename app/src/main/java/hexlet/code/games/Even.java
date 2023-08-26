@@ -17,7 +17,7 @@ public class Even {
         Even.randomvalue = randomvalue;
     }
 
-    private static int multiplier = 1000;
+    private static final int multiplier = 1000;
 
     public static int getMultiplier() {
         return multiplier;

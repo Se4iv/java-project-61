@@ -15,3 +15,6 @@
 
 #Aciinema record for step 8, game Progression example
 [![asciicast](https://asciinema.org/a/6GPS6jMudAnf6wVQnsqAqHvgu.svg)](https://asciinema.org/a/6GPS6jMudAnf6wVQnsqAqHvgu)
+
+#Asciinema record for step 9, game Prime example
+[![asciicast](https://asciinema.org/a/hJD2pU08ZSNfD8BaLFVNvVnoL.svg)](https://asciinema.org/a/hJD2pU08ZSNfD8BaLFVNvVnoL)
