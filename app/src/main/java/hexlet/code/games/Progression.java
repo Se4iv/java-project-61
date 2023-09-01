@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.StringJoiner;
 
 public class Progression {
+    public static final String RULE = "What number is missing in the progression?";
     private static int startnumber;
     private static int difference;
     private static int missingnumber;
@@ -49,47 +50,35 @@ public class Progression {
     private static final int LENGTHMULTIPLIER = 5;
     private static final int MINLENGTHMULTIPLIER = 5;
 
-    public static int getStartmultiplier() {
-        return STARTMULTIPLIER;
-    }
-
-    public static int getDifferencemultiplier() {
-        return DIFFERENCEMULTIPLIER;
-    }
-
-    public static int getLengthmultiplier() {
-        return LENGTHMULTIPLIER;
-    }
-
-    public static int getMinlengthmultiplier() {
-        return MINLENGTHMULTIPLIER;
-    }
-
 
     public static void startGame(Scanner scanner, String username) {
-        String[][] array = new String[Engine.getGamescount()][];
+        String[][] array = new String[Engine.GAMESCOUNT][];
 
-        for (int i = 0; i < Engine.getGamescount(); i++) {
-            setStartnumber(Random.generateNumber(getStartmultiplier()));
-            setDifference(Random.generateNumber(getDifferencemultiplier()));
-            setLength(Random.generateNumber(getLengthmultiplier()) + getMinlengthmultiplier());
+        for (int i = 0; i < Engine.GAMESCOUNT; i++) {
+            setStartnumber(Random.generateNumber(STARTMULTIPLIER));
+            setDifference(Random.generateNumber(DIFFERENCEMULTIPLIER));
+            setLength(Random.generateNumber(LENGTHMULTIPLIER) + MINLENGTHMULTIPLIER);
             setMissingnumber(Random.generateNumber(getLength()));
-            StringJoiner stringJoiner = new StringJoiner(" ");
-            int nextnumber = getStartnumber();
-            int missednumber = 0;
-            for (int j = 0; j < getLength(); j++) {
-                if (j == getMissingnumber() - 1) {
-                    stringJoiner.add("..");
-                    missednumber = nextnumber;
-                    nextnumber += getDifference();
-                } else {
-                    stringJoiner.add(String.valueOf(nextnumber));
-                    nextnumber += getDifference();
-                }
-            }
-            array[i] = new String[]{String.valueOf(stringJoiner), String.valueOf(missednumber)};
+            array[i] = getResult(getStartnumber(), getDifference(), getLength(), getMissingnumber());
         }
 
-        Engine.processGame(array, scanner, username);
+        Engine.processGame(array, scanner, username, "Progression");
+    }
+
+    private static String[] getResult(int number1, int diff, int len, int missnumber) {
+        StringJoiner stringJoiner = new StringJoiner(" ");
+        int nextnumber = number1;
+        int missednumber = 0;
+        for (int j = 0; j < len; j++) {
+            if (j == missnumber - 1) {
+                stringJoiner.add("..");
+                missednumber = nextnumber;
+                nextnumber += diff;
+            } else {
+                stringJoiner.add(String.valueOf(nextnumber));
+                nextnumber += diff;
+            }
+        }
+        return new String[]{String.valueOf(stringJoiner), String.valueOf(missednumber)};
     }
 }

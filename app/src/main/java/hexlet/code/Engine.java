@@ -1,49 +1,55 @@
 package hexlet.code;
 
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+
 import java.util.Scanner;
 
 public class Engine {
-    public static int getGamescount() {
-        return GAMESCOUNT;
-    }
-
-    private static final int GAMESCOUNT = 3;
-    private static int counttrys = 0;
-    private static boolean correctanswer = true;
-
-    public static void processGame(String[][] qustionsandanswers, Scanner scanner, String username) {
-        while (isCorrectAnswer() && counttrys < getGamescount()) {
-            System.out.println("Question: " + qustionsandanswers[counttrys][0]);
+    public static final int GAMESCOUNT = 3;
+    public static void processGame(String[][] qustionsandanswers, Scanner scanner, String username, String gamename) {
+        getGameRules(gamename); //
+        for (String[] next : qustionsandanswers) {
+            System.out.println("Question: " + next[0]);
             String answer = scanner.next();
             System.out.println("Your answer: " + answer);
-            setCorrectanswer(isCorrect(answer, qustionsandanswers[counttrys][1]));
-            if (isCorrectAnswer()) {
-                System.out.println("Correct!");
-                counttrys++;
+            if (answer.equalsIgnoreCase(next[1])) {
+                java.lang.System.out.println("Correct!");
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                        + qustionsandanswers[counttrys][1] + "'.\n"
+                        + next[1] + "'.\n"
                         + "Let's try again, " + username + "!");
-                break;
+                return;
             }
 
         }
-        if (counttrys == getGamescount()) {
-            System.out.println("Congratulations, " + username + "!");
+        System.out.println("Congratulations, " + username + "!");
+
+    }
+    private static void getGameRules(String gamename) {
+        switch (gamename) {
+            case "Even":
+                System.out.println(Even.RULE);
+                break;
+            case "Calc":
+                System.out.println(Calc.RULE);
+                break;
+            case "Gcd":
+                System.out.println(Gcd.RULE);
+                break;
+            case "Progression":
+                System.out.println(Progression.RULE);
+                break;
+            case "Prime":
+                System.out.println(Prime.RULE);
+                break;
+            default:
+                break;
         }
-    }
-
-    public static boolean isCorrectAnswer() {
-        return correctanswer;
-    }
-
-    public static void setCorrectanswer(boolean correctanswer1) {
-        correctanswer = correctanswer1;
-    }
-
-    public static boolean isCorrect(String answer, String correct) {
-        return answer.equalsIgnoreCase(correct);
     }
 }
 

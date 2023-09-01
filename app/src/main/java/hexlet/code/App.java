@@ -37,23 +37,18 @@ public class App {
         String username = Cli.greeting(scanner);
         switch (choice) {
             case "2":
-                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                 Even.startGame(scanner, username);
                 break;
             case "3":
-                System.out.println("What is the result of the expression?");
                 Calc.startGame(scanner, username);
                 break;
             case "4":
-                System.out.println("Find the greatest common divisor of given numbers.");
                 Gcd.startGame(scanner, username);
                 break;
             case "5":
-                System.out.println("What number is missing in the progression?");
                 Progression.startGame(scanner, username);
                 break;
             case "6":
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 Prime.startGame(scanner, username);
             default:
                 break;

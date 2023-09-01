@@ -6,6 +6,9 @@ import hexlet.code.Random;
 import java.util.Scanner;
 
 public class Calc {
+    public static final String RULE = "What is the result of the expression?";
+    private static final int LESSTHEN = 3; //для определения знака
+    private static final int MORETHEN = 2; //для определения знака
     public static int getFirstnumber() {
         return firstnumber;
     }
@@ -36,38 +39,49 @@ public class Calc {
 
     private static char sign;
 
-    private static final int MILTIPLIER = 25;
-
-    public static int getMiltiplier() {
-        return MILTIPLIER;
-    }
+    private static final int MULTIPLIER = 25;
 
     public static void startGame(Scanner scanner, String username) {
-        String[][] array = new String[Engine.getGamescount()][];
-        int result = 0;
-        for (int i = 0; i < Engine.getGamescount(); i++) {
-            setFirstnumber(Random.generateNumber(getMiltiplier()));
-            setSecondnumber(Random.generateNumber(getMiltiplier()));
-            setSign(Random.generateSign(getMiltiplier()));
-            switch (getSign()) {
-                case '+':
-                    result = getFirstnumber() + getSecondnumber();
-                    break;
-                case '-':
-                    result = getFirstnumber() - getSecondnumber();
-                    break;
-                case '*':
-                    result = getFirstnumber() * getSecondnumber();
-                    break;
-                default:
-                    break;
-            }
+        String[][] array = new String[Engine.GAMESCOUNT][];
+        for (int i = 0; i < Engine.GAMESCOUNT; i++) {
+            setFirstnumber(Random.generateNumber(MULTIPLIER));
+            setSecondnumber(Random.generateNumber(MULTIPLIER));
+            setSign(generateSign());
             // Добавляем массив выражения и правильного ответа
             array[i] = new String[]{getFirstnumber() + " " + getSign() + " "
                     + getSecondnumber(),
-                    String.valueOf(result)};
+                    getResult(getFirstnumber(), getSecondnumber(), getSign())};
         }
         //передаем управление в секцию вопросов и ответов
-        Engine.processGame(array, scanner, username);
+        Engine.processGame(array, scanner, username, "Calc");
+    }
+
+    private static char generateSign() {
+        int i = Random.generateNumber(MULTIPLIER);
+        if (i < MULTIPLIER / LESSTHEN) {
+            return '+';
+        } else if  (i < MULTIPLIER / LESSTHEN * MORETHEN) {
+            return  '-';
+        } else {
+            return '*';
+        }
+    }
+
+    private static String getResult(int number1, int number2, char sign1) {
+        int result = 0;
+        switch (sign1) {
+            case '+':
+                result = number1 + number2;
+                break;
+            case '-':
+                result = number1 - number2;
+                break;
+            case '*':
+                result = number1 * number2;
+                break;
+            default:
+                break;
+        }
+        return String.valueOf(result);
     }
 }

@@ -6,7 +6,7 @@ import hexlet.code.Random;
 import java.util.Scanner;
 
 public class Even {
-
+    public static final String RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static int randomvalue;
 
     public static int getRandomvalue() {
@@ -19,20 +19,20 @@ public class Even {
 
     private static final int MULTIPLIER = 1000;
 
-    public static int getMultiplier() {
-        return MULTIPLIER;
-    }
-
     public static void startGame(Scanner scanner, String username) {
-        String[][] array = new String[Engine.getGamescount()][];
-        for (int i = 0; i < Engine.getGamescount(); i++) {
-            setRandomvalue(Random.generateNumber(getMultiplier()));
+        String[][] array = new String[Engine.GAMESCOUNT][];
+        for (int i = 0; i < Engine.GAMESCOUNT; i++) {
+            setRandomvalue(Random.generateNumber(MULTIPLIER));
             // Добавляем массив числа и правильного ответа
-            array[i] = new String[]{String.valueOf(getRandomvalue()), getRandomvalue() % 2 == 0 ? "yes" : "no"};
+            array[i] = new String[]{String.valueOf(getRandomvalue()), getResult(getRandomvalue())};
         }
         //передаем управление в секцию вопросов и ответов
-        Engine.processGame(array, scanner, username);
+        Engine.processGame(array, scanner, username, "Even");
 
+    }
+
+    private static String getResult(int value) {
+        return value % 2 == 0 ? "yes" : "no";
     }
 
 
