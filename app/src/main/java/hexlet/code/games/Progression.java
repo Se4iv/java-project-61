@@ -21,11 +21,11 @@ public class Progression {
             int startnumber = Random.generateNumber(STARTMULTIPLIER);
             int difference = Random.generateNumber(DIFFERENCEMULTIPLIER);
             int length = Random.generateNumber(LENGTHMULTIPLIER) + MINLENGTHMULTIPLIER;
-            int missingposition = Random.generateNumber(length);
+            int missingposition = Random.generateNumber(length) - 1;
             int[] result = getResult(startnumber, difference, length);
             int missednumber = result[missingposition];
-            array[i] = new String[]{Arrays.toString(result).replace(",", "")
-                    .replace(String.valueOf(missednumber), ".."), String.valueOf(missednumber)};
+            array[i] = new String[]{Arrays.toString(result).replace(",", "").replace("[", "")
+                    .replace("]", "").replace(String.valueOf(missednumber), ".."), String.valueOf(missednumber)};
         }
 
         Engine.processGame(array, scanner, username, "Progression");
