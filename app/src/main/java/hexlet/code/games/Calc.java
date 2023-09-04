@@ -9,48 +9,18 @@ public class Calc {
     public static final String RULE = "What is the result of the expression?";
     private static final int LESSTHEN = 3; //для определения знака
     private static final int MORETHEN = 2; //для определения знака
-    public static int getFirstnumber() {
-        return firstnumber;
-    }
-
-    public static void setFirstnumber(int firstnumber1) {
-        Calc.firstnumber = firstnumber1;
-    }
-
-    private static int firstnumber;
-
-    public static int getSecondnumber() {
-        return secondnumber;
-    }
-
-    public static void setSecondnumber(int secondnumber1) {
-        Calc.secondnumber = secondnumber1;
-    }
-
-    private static int secondnumber;
-
-    public static char getSign() {
-        return sign;
-    }
-
-    public static void setSign(char sign1) {
-        Calc.sign = sign1;
-    }
-
-    private static char sign;
-
     private static final int MULTIPLIER = 25;
 
     public static void startGame(Scanner scanner, String username) {
         String[][] array = new String[Engine.GAMESCOUNT][];
         for (int i = 0; i < Engine.GAMESCOUNT; i++) {
-            setFirstnumber(Random.generateNumber(MULTIPLIER));
-            setSecondnumber(Random.generateNumber(MULTIPLIER));
-            setSign(generateSign());
+            int firstnumber = Random.generateNumber(MULTIPLIER);
+            int secondnumber = Random.generateNumber(MULTIPLIER);
+            char sign = generateSign();
             // Добавляем массив выражения и правильного ответа
-            array[i] = new String[]{getFirstnumber() + " " + getSign() + " "
-                    + getSecondnumber(),
-                    getResult(getFirstnumber(), getSecondnumber(), getSign())};
+            array[i] = new String[]{firstnumber + " " + sign + " "
+                    + secondnumber,
+                    String.valueOf(getResult(firstnumber, secondnumber, sign))};
         }
         //передаем управление в секцию вопросов и ответов
         Engine.processGame(array, scanner, username, "Calc");
@@ -67,7 +37,7 @@ public class Calc {
         }
     }
 
-    private static String getResult(int number1, int number2, char sign1) {
+    private static int getResult(int number1, int number2, char sign1) {
         int result = 0;
         switch (sign1) {
             case '+':
@@ -82,6 +52,6 @@ public class Calc {
             default:
                 break;
         }
-        return String.valueOf(result);
+        return result;
     }
 }
