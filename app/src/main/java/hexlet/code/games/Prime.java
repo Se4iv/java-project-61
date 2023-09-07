@@ -1,30 +1,30 @@
 package hexlet.code.games;
 
-
 import hexlet.code.Engine;
-import hexlet.code.Random;
-import org.apache.commons.lang3.ArrayUtils;
-
-import java.util.Scanner;
-import java.util.function.Predicate;
+import hexlet.code.RandomNum;
 
 public class Prime {
     public static final String RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static final int[] PRIMES = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-        61, 67, 71, 73, 79, 83, 89, 97, 101};
-    private static Predicate<Integer> predicate = t -> ArrayUtils.contains(PRIMES, t);
-    private static final int MULTIPLIER = PRIMES[PRIMES.length - 1];
+    private static final int MULTIPLIER = 1000;
 
-    public static void startGame(Scanner scanner, String username) {
+    public static void startGame() {
         String[][] array = new String[Engine.GAMESCOUNT][];
         for (int i = 0; i < Engine.GAMESCOUNT; i++) {
-            int randomnumber = Random.generateNumber(MULTIPLIER);
-            array[i] = new String[]{String.valueOf(randomnumber), getResult(randomnumber)  ? "yes" : "no"};
+            int randomnumber = RandomNum.generateNumber(MULTIPLIER);
+            array[i] = new String[]{String.valueOf(randomnumber), isPrime(randomnumber)  ? "yes" : "no"};
         }
-        Engine.processGame(array, scanner, username, "Prime");
+        Engine.processGame(array, RULE);
     }
 
-    private static boolean getResult(int number) {
-        return predicate.test(number);
+    private static boolean isPrime(int number) {
+        int i = 2;
+        int j = 0;
+        while (i * i <= number && j != 1) {
+            if (number % i == 0) {
+                j = 1;
+            }
+            i++;
+        }
+        return j != 1;
     }
 }

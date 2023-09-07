@@ -22,8 +22,7 @@ public class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-        Scanner scanner = new Scanner(System.in);
-        String choice = scanner.next();
+        String choice = new Scanner(System.in).next();
         String[] rightchoice = {"0", "1", "2", "3", "4", "5", "6"};
         if (choice.equals("0")) {
             System.out.println("Farewell and good luck!");
@@ -34,25 +33,25 @@ public class App {
             return;
         }
         System.out.println("\nWelcome to the Brain Games!");
-        String username = Cli.greeting(scanner);
         switch (choice) {
+            case "1":
+                Cli.greeting();
             case "2":
-                Even.startGame(scanner, username);
+                Even.startGame();
                 break;
             case "3":
-                Calc.startGame(scanner, username);
+                Calc.startGame();
                 break;
             case "4":
-                Gcd.startGame(scanner, username);
+                Gcd.startGame();
                 break;
             case "5":
-                Progression.startGame(scanner, username);
+                Progression.startGame();
                 break;
             case "6":
-                Prime.startGame(scanner, username);
+                Prime.startGame();
             default:
                 break;
         }
-        scanner.close();
     }
 }
