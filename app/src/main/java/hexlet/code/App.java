@@ -36,6 +36,7 @@ public class App {
         switch (choice) {
             case "1":
                 Cli.greeting();
+                break;
             case "2":
                 Even.startGame();
                 break;
